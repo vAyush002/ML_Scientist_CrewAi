@@ -1,0 +1,49 @@
+dataset_analysis:
+  description: >
+    You are given a dataset at {path}.
+    Use tools to:
+    - analyze the dataset
+    - detect the target column
+    - identify the problem type
+    Summarize findings clearly.
+  expected_output: >
+    Dataset report including:
+    - shape and columns
+    - missing values
+    - detected target
+    - classification or regression
+    - risks and concerns
+  
+
+research_planning:
+  description: >
+    Based on the dataset analysis, design an experiment plan
+    including hypotheses, candidate models, feature engineering ideas,
+    and evaluation metrics.
+  expected_output: >
+    A clear and structured ML experiment plan.
+  
+
+model_training:
+  description: >
+    Train baseline machine learning models using the dataset at {path}.
+    Report metrics and observations.
+  expected_output: >
+    A summary of trained models with performance metrics.
+  
+
+model_evaluation:
+  description: >
+    Compare trained models, analyze strengths and weaknesses,
+    and recommend the best-performing model.
+  expected_output: >
+    A justified model selection with evaluation insights.
+  
+
+result_explanation:
+  description: >
+    Explain the final model's behavior, important features,
+    limitations, and possible future improvements.
+  expected_output: >
+    A human-readable scientific explanation of results.
+  
