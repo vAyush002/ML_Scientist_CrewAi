@@ -1,43 +1,98 @@
-# Machine Learning Report
-## Problem Overview
-Based on the dataset analysis, we are trying to predict the likelihood of a customer purchasing a product based on their demographic information and purchase history.
+# Machine Learning Report – Titanic Survival Prediction
 
-## Dataset Summary
-Our dataset consists of [insert number] instances with [insert number] features. The target variable is binary, indicating whether a customer has purchased a product or not.
+## 1. Problem Overview
+The objective of this project is to predict whether a passenger survived the Titanic disaster based on personal and travel-related information.
 
-## Models Trained
-We trained four machine learning models to solve this problem:
+This is a **binary classification problem**, where:
+- 1 → Passenger survived
+- 0 → Passenger did not survive
 
-1. **Logistic Regression**: A simple linear model that is easy to interpret and can be used as a baseline for comparison.
-2. **Decision Tree**: A tree-based model that can capture non-linear relationships in the data and provide insights into feature importance.
-3. **Random Forest**: An ensemble method that combines multiple decision trees to improve predictive accuracy and reduce overfitting.
-4. **Gradient Boosting**: Another ensemble method that uses gradient descent to combine multiple models, which is known for its high performance on tabular data.
+---
 
-## Model Performance Comparison
-We evaluated the performance of each model using a holdout set and cross-validation. The results are shown below:
+## 2. Dataset Summary
+- Dataset: Titanic passenger dataset
+- Target variable: `Survived`
+- Type of data: Tabular
+- Key feature types:
+  - Numerical: Age, Fare
+  - Categorical: Sex, Pclass, Embarked
+- Missing values:
+  - Age contains missing values
+  - Some missing values in Embarked
 
-| Model | Accuracy | Precision | Recall | F1 Score |
-| --- | --- | --- | --- | --- |
-| Logistic Regression | 85% | 80% | 75% | 82% |
-| Decision Tree | 88% | 85% | 80% | 86% |
-| Random Forest | 91% | 90% | 85% | 92% |
-| Gradient Boosting | 92% | 95% | 93% | 94% |
+The dataset represents passenger demographics and ticket information that influence survival chances.
 
-## Best Model and Reasoning
-Based on the results, **Gradient Boosting** performed best overall. Its high performance can be attributed to its ability to handle complex interactions between features and its robustness against overfitting.
+---
 
-## Important Features (explained simply)
-The most important features for predicting customer purchases are [insert feature names]. These features capture key aspects of customer behavior and demographics that are relevant to the target variable.
+## 3. Models Trained
+The following baseline machine learning models were trained and compared:
 
-## Limitations of the Current Approach
-One limitation of our approach is that **Gradient Boosting**'s high performance comes at the cost of interpretability. While it can provide insights into feature importance, its complex ensemble nature makes it more challenging to understand than simpler models like Logistic Regression or Decision Trees.
+1. **Logistic Regression**  
+   Used as a simple and interpretable baseline model.
 
-## Future Improvements
-To improve our model's performance and interpretability, we could consider:
+2. **Decision Tree**  
+   Captures non-linear patterns and provides interpretability.
 
-* Feature engineering: Extracting additional features from the data that are relevant to the target variable.
-* Hyperparameter tuning: Fine-tuning the hyperparameters of each model to optimize its performance.
-* Ensemble methods: Combining multiple models to improve predictive accuracy and reduce overfitting.
+3. **Random Forest**  
+   An ensemble of decision trees that improves stability and accuracy.
 
-## Final Conclusion
-In conclusion, our machine learning project aimed to predict customer purchases based on demographic information and purchase history. We trained four models (Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting) and evaluated their performance using a holdout set and cross-validation. **Gradient Boosting** performed best overall, but its high performance comes at the cost of interpretability. Future improvements could include feature engineering, hyperparameter tuning, and ensemble methods.
+4. **Gradient Boosting Machine (GBM)**  
+   A powerful ensemble model well-suited for structured data.
+
+---
+
+## 4. Model Performance Comparison
+Models were evaluated using standard classification metrics such as accuracy, precision, recall, and F1-score.
+
+Overall performance trend:
+- Logistic Regression → weakest baseline
+- Decision Tree → moderate performance
+- Random Forest → strong performance
+- **Gradient Boosting → best overall performance**
+
+Gradient Boosting consistently achieved the highest balance across evaluation metrics.
+
+---
+
+## 5. Best Model and Reasoning
+**Gradient Boosting Machine** was selected as the best-performing model because:
+- It handles non-linear feature interactions effectively
+- It is robust to noisy features
+- It performs well on tabular datasets like Titanic
+
+---
+
+## 6. Important Features (Explained Simply)
+The most influential features affecting survival were:
+
+- **Sex** – Female passengers had significantly higher survival rates
+- **Passenger Class (Pclass)** – Higher class passengers were more likely to survive
+- **Age** – Children had higher survival probabilities
+- **Fare** – Higher fares often correlated with better survival chances
+
+These features align with historical and real-world understanding of the Titanic disaster.
+
+---
+
+## 7. Limitations of the Current Approach
+- Limited hyperparameter tuning was performed
+- Ensemble models like GBM are less interpretable
+- Dataset size is relatively small
+- Feature importance was inferred rather than formally calculated
+
+---
+
+## 8. Future Improvements
+- Perform hyperparameter tuning (Grid Search / Bayesian Optimization)
+- Add feature importance analysis using SHAP values
+- Apply cross-validation more extensively
+- Experiment with stacking or hybrid ensemble models
+- Improve missing value handling strategies
+
+---
+
+## 9. Final Conclusion
+This project demonstrates an end-to-end autonomous machine learning pipeline applied to the Titanic survival prediction problem.
+
+Among all tested models, **Gradient Boosting Machine** provided the most reliable and accurate predictions.  
+The system can be extended and reused for similar classification problems involving structured datasets.
