@@ -1,49 +1,84 @@
 dataset_analysis:
   description: >
-    You are given a dataset at {path}.
-    Use tools to:
-    - analyze the dataset
-    - detect the target column
-    - identify the problem type
-    Summarize findings clearly.
+    Analyze the dataset located at {path}.
+
+    Explain in simple terms:
+    - What the dataset is about
+    - What each type of feature represents
+    - Which column is the target
+    - Whether this is a classification or regression problem
+    - Any missing values or data quality issues
+
+    Do NOT use generic explanations.
+    Be specific to the given dataset.
   expected_output: >
-    Dataset report including:
-    - shape and columns
-    - missing values
-    - detected target
-    - classification or regression
-    - risks and concerns
-  
+    A clear dataset summary including:
+    - Dataset purpose
+    - Target column
+    - Feature types
+    - Missing values
+    - Potential risks or limitations
+
 
 research_planning:
   description: >
-    Based on the dataset analysis, design an experiment plan
-    including hypotheses, candidate models, feature engineering ideas,
-    and evaluation metrics.
+    Based on the dataset analysis, design a machine learning plan.
+
+    Clearly explain:
+    - What we are trying to predict
+    - Which models should be tried and why
+    - How the models will be compared
+    - Which evaluation metrics make sense for this problem
   expected_output: >
-    A clear and structured ML experiment plan.
-  
+    A structured experiment plan written in plain English.
+
 
 model_training:
   description: >
     Train baseline machine learning models using the dataset at {path}.
-    Report metrics and observations.
+
+    Focus on:
+    - Training multiple standard models
+    - Observing relative performance
+    - Not overfitting or heavy tuning
+
+    If exact metrics are unavailable, describe performance qualitatively.
   expected_output: >
-    A summary of trained models with performance metrics.
-  
+    A comparison-style summary describing how each model performed.
+
 
 model_evaluation:
   description: >
-    Compare trained models, analyze strengths and weaknesses,
-    and recommend the best-performing model.
+    Compare all trained models and decide which one is the best.
+
+    Explain:
+    - Which model performed best overall
+    - Why it performed better than others
+    - Trade-offs between accuracy and interpretability
   expected_output: >
-    A justified model selection with evaluation insights.
-  
+    A clear and honest model selection explanation.
+
 
 result_explanation:
   description: >
-    Explain the final model's behavior, important features,
-    limitations, and possible future improvements.
+    Write the FINAL PROJECT REPORT using the structure below:
+
+    1. Problem Overview
+    2. Dataset Summary
+    3. Models Trained
+    4. Model Performance Comparison
+    5. Best Model and Reasoning
+    6. Important Features (explained simply)
+    7. Limitations of the Current Approach
+    8. Future Improvements
+    9. Final Conclusion
+
+    The report MUST:
+    - Be easy to understand
+    - Be specific to the dataset
+    - Be written in markdown
+    - Be suitable for GitHub and resume review
   expected_output: >
-    A human-readable scientific explanation of results.
-  
+    A complete, human-readable markdown report.
+  agent: scientific_communicator
+  output_file: src/final_report2.md

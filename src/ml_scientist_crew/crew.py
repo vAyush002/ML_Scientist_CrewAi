@@ -75,7 +75,7 @@ class MlScientistCrew:
                 self.model_training(),
                 self.model_evaluation()
             ],
-            output_file="final_report.md"
+            output_file="final_report1.md"
         )
 
     @crew
