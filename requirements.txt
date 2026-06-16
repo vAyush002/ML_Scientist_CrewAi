@@ -1,0 +1,22 @@
+# Core agent framework (Crews + Flows). 0.10x is the 2026 line.
+crewai>=0.105,<0.130
+crewai-tools>=0.40,<0.80
+
+# LLM routing (CrewAI uses this under the hood for Anthropic)
+litellm>=1.60
+
+# Data + modeling
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+xgboost>=2.0          # optional; pipeline skips it gracefully if missing
+joblib>=1.3
+
+# UI
+streamlit>=1.40
+plotly>=5.22
+
+# Utils
+python-dotenv>=1.0
+pydantic>=2.6
+openpyxl>=3.1          # Excel support
